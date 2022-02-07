@@ -1,30 +1,22 @@
- 
- 
+import React from "react";
 import "./App.css";
- 
- 
- 
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Checkout from "./Checkout";
+import Header from "./navbar/Header";
+import Login from "./Login"
 function App() {
   return (
     <>
-      <h1>Best Of Luck For Learning React</h1>
-      <nav>
-        <li>Home</li>
-        <li>contact</li>
-        <li>about us</li>
-        <li>Help</li>
-      </nav>
-      <div className="container">
-        
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius nemo,
-          suscipit, quos, animi voluptas quas quo repudiandae ea perferendis
-          esse est! Temporibus quam, dolore sunt consequatur maxime nulla
-          veritatis architecto dolor asperiores iusto ipsa?
-        </p>
-      </div>
-      </> 
+      <Router>
+        <Routes>
+          <Route path="/" element={<Header />} />
+          <Route path="/Checkout" element={<Checkout />}/>
+          <Route path="/Login" element={<Login />}/>
+
+        </Routes>
+      </Router>
+    </>
   );
 }
 
- 
+export default App;
